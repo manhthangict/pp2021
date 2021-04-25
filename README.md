@@ -9,6 +9,6 @@ Students are expected to:
 Student Info
 =========================
 
-* Student Name: Do Manh Thangg
+* Student Name: Do Manh Thang
 * Student ID: BA9-056
 
