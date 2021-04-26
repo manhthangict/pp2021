@@ -44,9 +44,9 @@ class Cse:
         return self.cname
 
 
-class Marks:
-    def __init__(self, mid, nid, mark):
-        self._mid = mid
+class Markstd:
+    def __init__(self, markid, nid, mark):
+        self._markid = markid
         self._nid = nid
         self._mark = mark
         Mark.append(self)
@@ -63,75 +63,82 @@ class Marks:
     def get_gpa(self):
         return self.gpa
 
-def student_num():
+def Nos():
     student = int(input("Enter students in class: "))
-    return student
+    if student < 0 or student == 0:
+        print("Student invalid")
+        return student
+    else:
+        return 0
 
 
-# Add student
-
-def add_student():
+def Adds():
     print("STUDENT INFO")
     name = input("Enter Student's name: ")
     id = input("Enter Student's ID: ")
     dob = input("Enter Student's DoB: ")
-    st_u = {
+    std = {
         'id': id,
         'name': name,
         'dob': dob
     }
-    Student.append(st_u)
+    Student.append(std)
     StudentID.append(id)
 
 
-# Add number of course
-def course_num():
+def Noc():
     course = int(input("Enter total number of course: "))
-    return
+    if course < 0 or course == 0:
+        print("Course invalid")
+        return 0
+    else:
+        return course
 
 
 # Add course
-def add_course():
+def Addc():
     print("COURSE")
-    cname = input("Enter Course's name: ")
-    cid = input("Enter Course's ID: ")
+    name = input("Enter Course's name: ")
+    id = input("Enter Course's ID: ")
     cc = input("Enter Course's Credit:")
-    cr_o = {
-        'cid': cid,
-        'cname': cname,
+    cse = {
+        'id': id,
+        'name': name,
         'cc': cc
     }
-    Course.append(cr_o)
+    Course.append(cse)
     CourseID.append(cid)
 
 
 # Create mark for students
-def create_mark():
-    g = 1
-    tu = len(Student)
-    while g <= tu:
-        g += 1
-        mid = input("Enter the Student ID: ")
-        if mid in Student:
-            for i in range(0, len(CourseID)):
-                nid = input("Enter the Course ID: ")
-                if nid in CourseID:
+def Markstd():
+    rint("MARK OF STUDENT")
+    a = 1
+    student = len(Student)
+    while a <= student:
+        a += 1
+        markname = input("Enter the Student Name: ")
+        if markname in StudentName:
+            for i in range(0, len(CourseName)):
+                coursename = input("Enter the Course Name: ")
+                if coursename in CourseName:
                     mark = float(input("Enter Student Mark: "))
-                    kk = {
-                        'mid': mid,
-                        'nid': nid,
+                    mrk = {
+                        'markname': markname,
+                        'coursename': coursename,
                         'mark': mark
                     }
                 else:
-                    print("Student ID NOT FOUND !!")
+                    print("Student Name not found ")
                     break
-                Mark.append(kk)
+                Mark.append(mrk)
         else:
-            print("Course ID NOT FOUND !!")
+            print("Course Name not found")
             break
+    print("")
 
 
-def show_list_student():
+def Student_list():
     print("STUDENT LIST")
     for i in range(0, len(Student)):
         print(f"name:{Student[i]['name']}")
@@ -139,16 +146,25 @@ def show_list_student():
         print(f"DoB:{Student[i]['dob']}")
 
 
-def show_list_course():
+def Course_list():
     print("COURSE LIST")
     for i in range(0, len(Course)):
         print(f"name : {Course[i]['name']}")
         print(f"ID:{Course[i]['id']} ")
 
 
-def show_mark():
+def Mark_list():
     print("MARK LIST")
     for i in range(0, len(Mark)):
         print(f"ID-Student: {Mark[i]['a']}")
         print(f"ID-course: {Mark[i]['b']}")
         print(f" mark:{Mark[i]['mark']}")
+
+
+Nos()
+Adds()
+Noc()
+Addc()
+Student_list()
+Course_list()
+Mark_list()

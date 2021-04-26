@@ -32,7 +32,6 @@ def Addstd():
     StudentDoB.append(dob)
     Student.append(std)
     return std
-    print("")
 
 
 # Input number of course
@@ -114,3 +113,21 @@ def Mark_list():
         print(f"mark:{Mark[i]['mark']}")
         print("")
 
+nos = int(Nos())
+a = 1
+while a <= nos:
+    a -= -1
+    Addstd()
+Student_list()
+
+
+noc = int(Noc())
+a = 1
+while a <= noc:
+    a -= -1
+    Addc()
+Course_list()
+
+
+Markstd()
+Mark_list()
