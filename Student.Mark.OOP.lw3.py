@@ -132,40 +132,31 @@ def create_mark():
         else:
             print("Course ID NOT FOUND !!")
             break
-def mark_gpa():
 
-    int = numpy.array([self.mark])
-    null = numpy.array([self._ccredit])
-    strace.addstr("Enter Student's ID:")
-    id = strace.getstr().decode()
-    if id in StudentID:
-        for i in range(0, len(Student)):
-            marktotal = numpy.sum(null)
-            gpatotal = numpy.sum(numpy.multiply(int, null))
-            strace.refresh()
-            gpa = gpatotal / marktotal
-            strace.refresh()
-
-    else:
+def aver_gpa():
+    var=np.array([gpa_d])
+    cred=np.array([Credit])
+    print("GPA: ")
+    name =T_pain.getstr().decode()
+    if name in Student:
+        for i in range(len(Mark)):
+            recallcre=np.sum(cred)
+            recallvar=np.sum(np.multiply(var,cred))
+            T_pain.refresh()
+            Gpa=recallvar/recallcre
+            T_pain.refresh()                
+    else: 
         return 0
-    print(gpa)
 
-    MarkGPA.append(gpa)
-    strace.refresh()
-    for point in Mark:
-        strace.clear()
-        strace.refresh()
-        strace.addstr(" [Mark: ] %s   [GPA: ]%s \n" % (mark.get_id(), gpa))
-        strace.refresh()
+    gpa_s.append(Gpa)
+    T_pain.refresh()
 
+    for st_infor in Mark:
+        T_pain.clear()
+        T_pain.refresh()
+        T_pain.addstr(" Mark_studentid: %s   Gpa:%s \n" %(st_infor.get_id_course(), Gpa))
+        T_pain.refresh()
         break
-
-
-def gpa_sort():
-    sortg = numpy.array([MarkGPA])
-    sortg[::-1].sort()
-    strace.addstr("GPA Sorted %s: \n" % sortg)
-    strace.refresh()
 
 
 def show_list_student():
@@ -181,6 +172,9 @@ def show_list_course():
 
 
 def show_mark():
-    print("----STUDENTS MARK LIST----")
+    print("STUDENTS MARK LIST")
     for i in range(0, len(Mark)):
         print(f"ID-course: {Mark[i]['b']} ID-Student: {Mark[i]['a']}  mark:{Mark[i]['mark']}")
+
+def aver_gpa():
+    print("GPA")
